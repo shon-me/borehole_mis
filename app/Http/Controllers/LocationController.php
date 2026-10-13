@@ -31,11 +31,11 @@ class LocationController extends Controller
         }
     }
 
-    public function readLocations(){
+    public function readAllLocations(){
         try {
             $locations = Location::all();
             return response()->json([
-                $locations
+                'locations'=>$locations
             ], 200);
         } catch (\Exception $e) {
             return response()->json([
