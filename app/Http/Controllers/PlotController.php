@@ -73,11 +73,11 @@ class PlotController extends Controller
     public function updatePlot($id, Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|string|unique:plots,name',
+            'name' => 'required|string',
             'longitude' => 'required|string',
             'latitude' => 'required|string',
             'water_rate' => 'required|numeric|min:0|decimal:0,2',
-            'meter_number' => 'required|string|unique:plots,meter_number',
+            'meter_number' => 'required|string',
             'location_id' => 'required|integer|exists:locations,id'
         ]);
 
